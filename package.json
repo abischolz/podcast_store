@@ -1,0 +1,36 @@
+{
+  "name": "podcaststore",
+  "version": "1.0.0",
+  "description": "Sirius/Pandora/Onramp Final Interview Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development"
+  },
+  "author": "abischolz",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.17.4",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "eslint-loader": "^4.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "webpack": "^5.69.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.5.4",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "prettier": "^2.5.1",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
