@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import App from './App';
 import { initializeApp } from 'firebase/app';
+import { Provider } from 'react-router-dom';
 
 const { Client } = require('podcast-api');
 // eslint-disable-next-line import/prefer-default-export
@@ -18,10 +19,10 @@ const firebaseConfig = {
 // eslint-disable-next-line no-unused-vars
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  // eslint-disable-next-line no-undef
-  // eslint-disable-next-line comma-dangle
+  <Provider>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('app')
 );
