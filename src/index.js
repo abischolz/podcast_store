@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
-import App from './App';
-import { initializeApp } from 'firebase/app';
 import { Provider } from 'react-router-dom';
+import App from './App';
 
 const { Client } = require('podcast-api');
 // eslint-disable-next-line import/prefer-default-export

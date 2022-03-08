@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Card } from 'react-router-dom';
 
-const Header = () => {
+function Header() {
   return (
-    <div>
-      <Link to ={}>Podcasts</Link>
-    </div>
+    <Card>
+      <Link to="/podcasts">Podcasts</Link>
+      <Link to="/account">My Account </Link>
+    </Card>
   );
-};
+}
 
 export default Header;

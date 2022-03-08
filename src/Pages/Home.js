@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { Grid, Box, Container } from '@mui/material';
+import Podcast from '../Components/PodcastCard';
+import Header from '../Components/Header';
 
-const Home = (props) => {
+function Home() {
   useEffect(() => {
     console.log('HOME');
   }, []);
-  return <div>this is home component</div>;
-};
+  return (
+    <Container>
+      <Header />
+      <Box>
+        <Grid container>
+          <Podcast />
+        </Grid>
+      </Box>
+    </Container>
+  );
+}
 
-
-export const Home;
+export default Home;
