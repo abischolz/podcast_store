@@ -1,11 +1,12 @@
-import React from 'react';
-import { Link, Card } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Card, Typography } from "@mui/material";
 
 function Header() {
   return (
     <Card>
-      <Link to="/podcasts">Podcasts</Link>
-      <Link to="/account">My Account </Link>
+      <Typography>podcasts</Typography>
+      <Typography>account</Typography>
     </Card>
   );
 }

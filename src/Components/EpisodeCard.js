@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from "react";
 import {
   Card,
   CardContent,
@@ -7,9 +7,9 @@ import {
   CardMedia,
   IconButton,
   Link,
-} from '@mui/material';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import MediaPlayer from './MediaPlayer';
+} from "@mui/material";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import MediaPlayer from "./MediaPlayer";
 
 function EpisodeCard() {
   return (
@@ -23,7 +23,7 @@ function EpisodeCard() {
         </Link>
         <IconButton
           aria-label="favorite"
-          onClick={() => console.log('onClick will go here ')}
+          onClick={() => console.log("onClick will go here ")}
         >
           <FavoriteBorderIcon />
         </IconButton>

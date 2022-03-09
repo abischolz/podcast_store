@@ -1,13 +1,13 @@
 /* eslint-disable react/function-component-definition */
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Dialog,
   DialogTitle,
   DialogContent,
   DialogContentText,
   TextField,
-} from '@mui/material';
-import { Link } from 'react-router-dom';
+} from "@mui/material";
+// import { Link } from 'react-router-dom';
 
 const Login = (props) => {
   const [open, setOpen] = useState(false);
@@ -18,9 +18,11 @@ const Login = (props) => {
       <DialogContent>
         <DialogContentText>
           Log in to access your saved preferences! Don't have an account?
-          <Link path="/signup">
+          {/* <Link path="/signup"> */}
+          <DialogContentText>
             Sign up and starting building your library!
-          </Link>
+          </DialogContentText>
+          {/* </Link> */}
         </DialogContentText>
         <TextField label="Email Address" type="email" />
 

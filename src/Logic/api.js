@@ -1,14 +1,14 @@
 // API CALLS TO BACK END
-import axios from 'axios';
+import axios from "axios";
 
 export const getAllPodcasts = async () => {
   const getAllPodcastsConfig = {
-    baseUrl: 'localhost:8080',
-    headers: {
-      Authorization: 'auth token',
-    },
-    method: 'get',
-    url: '/podcasts',
+    baseUrl: "localhost:8080/",
+    // headers: {
+    //   Authorization: "auth token",
+    // },
+    method: "get",
+    url: "/podcasts",
   };
   const { data } = await axios(getAllPodcastsConfig);
   return data;
@@ -17,11 +17,11 @@ export const getAllPodcasts = async () => {
 export const getPodcastById = async (id) => {
   try {
     const getPodcastByIdConfig = {
-      baseUrl: 'localhost:8080',
+      baseUrl: "localhost:8080",
       headers: {
-        Authorization: 'auth token',
+        Authorization: "auth token",
       },
-      method: 'get',
+      method: "get",
       url: `/podcasts/${id}`,
     };
     const { data } = await axios(getPodcastByIdConfig);
@@ -35,12 +35,12 @@ export const getPodcastById = async (id) => {
 export const logIn = async () => {
   try {
     const logInConfig = {
-      baseUrl: 'localhost:8080',
+      baseUrl: "localhost:8080",
       headers: {
-        Authorization: 'auth token',
+        Authorization: "auth token",
       },
-      method: 'get',
-      url: '/login',
+      method: "get",
+      url: "/login",
     };
     const { data } = await axios(logInConfig);
 
@@ -53,12 +53,12 @@ export const logIn = async () => {
 export const logOut = async () => {
   try {
     const logOutConfig = {
-      baseUrl: 'localhost:8080',
+      baseUrl: "localhost:8080",
       headers: {
-        Authorization: 'auth token',
+        Authorization: "auth token",
       },
-      method: 'get',
-      url: '/login',
+      method: "get",
+      url: "/login",
     };
   } catch (error) {}
 };

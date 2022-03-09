@@ -1,6 +1,8 @@
-import React from 'react';
-import { Grid } from '@mui/material';
+import React from "react";
+import { Grid } from "@mui/material";
 
-const Grid = (children) => {
+function PodcastGrid(children) {
   return <Grid>{children}</Grid>;
-};
+}
+
+export default PodcastGrid;
