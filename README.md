@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+Podcast Store - the front-end
+
+In short, this front-end is woefully underdevelopped. Given the timeframe, I opted to focus on Java, as I had a very steep learning curve and struggled to get the backend off the ground. You can definitely see that in the lack of functionality, style and general error-prone-ness. I did map out in issues some of the requirements, added a schema, and drew wireframes (by hand). 
+
+Thank you for hte opportunity!
+  
+
+
+
+# Getting Started with Create React App (Instructions for install and start up)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
