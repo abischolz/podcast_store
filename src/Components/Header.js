@@ -1,16 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Card, Typography, AppBar } from "@mui/material";
+import { Link, Redirect } from "react-router-dom";
+import { Card, Typography, AppBar, Box } from "@mui/material";
 import SearchBar from "./Search";
+import AddIcon from "@mui/icons-material/Add";
+import HomeIcon from "@mui/icons-material/Home";
 
-function Header({ setLoading, setPodcasts }) {
+function Header({ ...props }) {
+  console.log("props = header", props);
+
   return (
-    <AppBar className="card-header">
-      <Typography>
-        <Link to="/podcasts">podcasts</Link>
-      </Typography>
-      <Typography>account</Typography>
-      <SearchBar setLoading={setLoading} setPodcasts={setPodcasts} />
+    <AppBar>
+      <Box className="card-header">
+        <Typography>
+          <Link to="/podcasts">podcasts</Link>
+        </Typography>
+        <Typography>account</Typography>
+        <SearchBar
+          className="search "
+          setLoading={props.setLoading}
+          setPodcasts={props.setPodcasts}
+          loading={props.loading}
+          setParentLoading={props.setParentLoading}
+        />
+      </Box>
     </AppBar>
   );
 }

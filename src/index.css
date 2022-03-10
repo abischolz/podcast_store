@@ -20,8 +20,15 @@ code {
 
 .podcast-card {
   color: darkblue;
+  max-width: 200px;
+  max-height: 200px;
+  overflow: scroll;
 }
 
 .thumbnail {
-  height: 50px;
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.search {
 }

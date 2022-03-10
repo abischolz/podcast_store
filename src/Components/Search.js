@@ -1,25 +1,37 @@
 import React, { useCallback, useState } from "react";
 import { InputBase, Box, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { useNavigate } from "react-router";
 import { searchPodcasts } from "../Logic/api";
+import { withRouter } from "../App";
 
-const SearchBar = ({ setLoading, setPodcasts }) => {
+const SearchBar = ({ ...props }) => {
   const [searchValue, setSearchValue] = useState("");
+  const [navigate, setNavigate] = useState(false);
+  const history = useNavigate();
+  console.log("searchValue", searchValue);
 
-  const onChange = useCallback((e) => {
-    e.preventDefault();
-    setSearchValue(e.target.value);
-  }, []);
-
-  const onSubmit = useCallback(
+  const onChange = useCallback(
     (e) => {
       e.preventDefault();
-      setLoading(true);
-      const podcasts = searchPodcasts(searchValue);
-      setPodcasts(podcasts);
-      setLoading(false);
+      setSearchValue(e.target.value);
+      console.log(searchValue);
     },
-    [setPodcasts],
+    [searchValue],
+  );
+
+  const onSubmit = useCallback(
+    async (e) => {
+      debugger;
+      e.preventDefault();
+      history("/podcasts");
+      props.setLoading(true);
+      const podcasts = await searchPodcasts(e.target[0].value);
+
+      props.setPodcasts(podcasts);
+      props.setLoading(false);
+    },
+    [props.setLoading, props.setPodcasts, props.loading],
   );
   return (
     <Box>
@@ -34,4 +46,4 @@ const SearchBar = ({ setLoading, setPodcasts }) => {
   );
 };
 
-export default SearchBar;
+export default withRouter(SearchBar);

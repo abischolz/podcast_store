@@ -11,23 +11,27 @@ import {
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MediaPlayer from "./MediaPlayer";
 
-function EpisodeCard() {
+function EpisodeCard({ ...props }) {
+  const onClick = (e) => {
+    e.preventDefault();
+  };
   return (
     <Card>
-      <CardHeader title="PODCAST TITLE " />
-      <CardMedia img="image.url" alt="podcast title" />
+      <CardHeader title={props.episode.title} />
+      <CardMedia
+        src={props.episode.thumbnail}
+        alt="podcast title"
+        component="img"
+      />
       <CardContent>
-        <Typography>Description of podcast</Typography>
-        <Link href="*" alt="Load elements for this podcast">
-          View Episodes
+        <Typography>{props.episode.description}</Typography>
+        <Link href={props.episode.website} alt="Load elements for this podcast">
+          View on the web!
         </Link>
-        <IconButton
-          aria-label="favorite"
-          onClick={() => console.log("onClick will go here ")}
-        >
+        <IconButton aria-label="favorite" onClick={onClick}>
           <FavoriteBorderIcon />
         </IconButton>
-        <CardMedia src="episode.auido" component={MediaPlayer} />
+        <CardMedia src={props.episode.audio} component={MediaPlayer} />
       </CardContent>
     </Card>
   );

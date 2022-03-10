@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const { Client } = require("podcast-api");
+
 // eslint-disable-next-line import/prefer-default-export
 export const client = Client({ apiKey: process.env.PODCAST_API_KEY });
 

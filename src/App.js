@@ -1,23 +1,34 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomeHeader from "./Components/Header";
-import LogIn from "./Pages/Login";
 import Home from "./Pages/Home";
-import PodcastCard from "./Components/PodcastCard";
+import PodcastView from "./Pages/PodcastView";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
-function App() {
+export function withRouter(Component) {
+  function ComponentWithRouterProp(props) {
+    let location = useLocation();
+    let navigate = useNavigate();
+    let params = useParams();
+    return <Component {...props} router={{ location, navigate, params }} />;
+  }
+
+  return ComponentWithRouterProp;
+}
+
+function App(props) {
+  console.log("props-app", props);
   return (
     <div>
-      <div>This is the app.</div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home {...props} />} />
+        <Route path="/podcasts" element={<Home {...props} />} />
         {/* <Route path="/login" component={LogIn} /> */}
         {/* <Route path="/signup" component={SignUp} /> */}
-        {/* <Route path="/home" component={Home} /> */}
-        <Route path="/podcasts" element={<PodcastCard />} />
+        <Route path="/podcast/:id" element={<PodcastView {...props} />} />
       </Routes>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
