@@ -1,21 +1,21 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HomeHeader from "./Components/Header";
 import LogIn from "./Pages/Login";
 import Home from "./Pages/Home";
+import PodcastCard from "./Components/PodcastCard";
 
 function App() {
   return (
     <div>
-      <HomeHeader />
       <div>This is the app.</div>
-      <Home />
-
-      {/* <Route path="/login" component={LogIn} /> */}
-      {/* <Route path="/signup" component={SignUp} /> */}
-      {/* <Route path="/home" component={Home} /> */}
-      {/* <Route path="/podcasts" component={Podcasts} />
-      <Route path="/songs" component={Songs} /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/login" component={LogIn} /> */}
+        {/* <Route path="/signup" component={SignUp} /> */}
+        {/* <Route path="/home" component={Home} /> */}
+        <Route path="/podcasts" element={<PodcastCard />} />
+      </Routes>
     </div>
   );
 }

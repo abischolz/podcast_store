@@ -2,16 +2,18 @@
 import axios from "axios";
 
 export const getAllPodcasts = async () => {
-  const getAllPodcastsConfig = {
-    baseUrl: "localhost:8080/",
-    // headers: {
-    //   Authorization: "auth token",
-    // },
-    method: "get",
-    url: "/podcasts",
-  };
-  const { data } = await axios(getAllPodcastsConfig);
-  return data;
+  try {
+    const headers = {
+      "Content-Type": "text/plain",
+    };
+    const { data } = await axios.get("http://localhost:8080/podcasts", {
+      headers,
+    });
+    const podcasts = data.podcasts;
+    return podcasts;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getPodcastById = async (id) => {
@@ -32,33 +34,21 @@ export const getPodcastById = async (id) => {
   }
 };
 
-export const logIn = async () => {
+export const searchPodcasts = async (value) => {
   try {
-    const logInConfig = {
+    const searchPodcastsConfig = {
       baseUrl: "localhost:8080",
-      headers: {
-        Authorization: "auth token",
-      },
       method: "get",
-      url: "/login",
+      data: {
+        q: value,
+      },
+      url: "/podcasts/search",
     };
-    const { data } = await axios(logInConfig);
 
-    return data;
+    const { results } = await axios(searchPodcastsConfig);
+    const podcasts = results;
+    return podcasts;
   } catch (e) {
     console.log(e);
   }
-};
-
-export const logOut = async () => {
-  try {
-    const logOutConfig = {
-      baseUrl: "localhost:8080",
-      headers: {
-        Authorization: "auth token",
-      },
-      method: "get",
-      url: "/login",
-    };
-  } catch (error) {}
 };

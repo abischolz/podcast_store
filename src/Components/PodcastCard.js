@@ -10,13 +10,18 @@ import {
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-function PodcastCard() {
+function PodcastCard({ podcast }) {
   return (
     <Card>
-      <CardHeader title="PODCAST TITLE " />
-      <CardMedia img="image.url" alt="podcast title" />
+      <CardHeader title={podcast.title} />
+      <CardMedia
+        className="thumbnail"
+        component="img"
+        src={podcast.thumbnail}
+        alt="podcast title"
+      />
       <CardContent>
-        <Typography>Description of podcast</Typography>
+        <Typography className="podcast-card">{podcast.description}</Typography>
         {/* <Link href="*" alt="Load elements for this podcast">
           View Episodes
         </Link> */}

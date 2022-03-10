@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Typography } from "@mui/material";
+import { Card, Typography, AppBar } from "@mui/material";
+import SearchBar from "./Search";
 
-function Header() {
+function Header({ setLoading, setPodcasts }) {
   return (
-    <Card>
-      <Typography>podcasts</Typography>
+    <AppBar className="card-header">
+      <Typography>
+        <Link to="/podcasts">podcasts</Link>
+      </Typography>
       <Typography>account</Typography>
-    </Card>
+      <SearchBar setLoading={setLoading} setPodcasts={setPodcasts} />
+    </AppBar>
   );
 }
 
